@@ -37,15 +37,6 @@ Route::get('planteles', function () {
     return "PLANTELES DE JUGADORAS";
 });
 
-Route::get('planteles/{plantel}/{player?}', function ($plantel,$player=null) {
-    if($player) {
-        return "Aquí encuentras el profile de la jugadora: $player";
-    } else {
-        return "PLANTEL: $plantel";
-    }
-    
-});
-
 Route::get('entidades', function () {
     return "ESTAS SON LAS ENTIDADES";
 });
@@ -58,7 +49,6 @@ Route::get('entidades/{entidad}/{equipo?}/{player?}', function($entidad, $equipo
     } else {
         return "ENTIDAD: $entidad";
     };
-
     
 });
 
