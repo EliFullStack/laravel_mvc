@@ -7,16 +7,10 @@ use Illuminate\Http\Request;
 class EntidadController extends Controller
 {
     public function index() {
-        return "ESTAS SON LAS ENTIDADES";
+        return view('entidades.index');
     }
 
     public function show($entidad, $equipo = null, $player = null) {
-        if($player) {
-            return "Esta es la jugadora $player, del equipo $equipo, que pertenece a $entidad";
-        } elseif ($equipo) {
-            return "Este es el equipo $equipo, que pertenece a $entidad";
-        } else {
-            return "ENTIDAD: $entidad";
-        };
+        return view('entidades.show', ['entidad' => $entidad, 'equipo' => $equipo, 'player' =>$player]);
     }
 }
