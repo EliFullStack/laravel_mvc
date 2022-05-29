@@ -16,6 +16,13 @@ class CreatePartidosTable extends Migration
         Schema::create('partidos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->date('fecha');
+            $table->time('hora');
+            $table->integer('puntos_equipo_local');
+            $table->integer('puntos_equipo_visitante');
+            $table->enum('estado_partido', ['jugado', 'pendiente', 'suspendido']);
+            $table->foreignId('id_equipo_local');
+            $table->foreignId('id_equipo_visitante');
         });
     }
 

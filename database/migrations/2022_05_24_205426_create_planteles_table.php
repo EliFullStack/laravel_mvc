@@ -16,6 +16,11 @@ class CreatePlantelesTable extends Migration
         Schema::create('planteles', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('nombre');
+            $table->string('primer_apellido');
+            $table->string('segundo_apellid')->nullable();
+            $table->date('fecha_nacimiento');
+            $table->string('posicion');
         });
     }
 
