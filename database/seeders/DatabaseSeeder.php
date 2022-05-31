@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Equipo;
+use App\Models\Partido;
 
 use Illuminate\Database\Seeder;
 
@@ -17,5 +18,6 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         Equipo::factory(5)->create();
+        Partido::factory(5)->create();
     }
 }
