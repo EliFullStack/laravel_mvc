@@ -2,19 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Partido;
 use Illuminate\Http\Request;
 
 class PartidoController extends Controller
 {
     public function index() {
-        return view('partidos.index');
+
+        $partidos = Partido::paginate();
+
+        return view('partidos.index', compact('partidos'));
     }
 
     public function create() {
         return view('partidos.create');
     }
 
-    public function show($game) {
-        return view('partidos.show', ['partido' => $game]);
+    public function show($id) {
+
+        $partido = Partido::find($id);
+        return view('partidos.show', compact('partido'));
     }
 }

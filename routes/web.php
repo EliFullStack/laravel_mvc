@@ -28,11 +28,11 @@ Route::controller(EquipoController::class)->group(function() {//a partir de Lara
     Route::get('equipos/{id}', 'show')->name('equipos.show');
 });
 
-Route::get('partidos', [PartidoController::class, 'index']);
+Route::get('partidos', [PartidoController::class, 'index'])->name('partidos.index');
 
-Route::get('partidos/create', [PartidoController::class, 'create']);
+Route::get('partidos/create', [PartidoController::class, 'create'])->name('partidos.create');
 
-Route::get('partidos/{partido}', [PartidoController::class, 'show']);
+Route::get('partidos/{id}', [PartidoController::class, 'show'])->name('partidos.show');
 
 
 
