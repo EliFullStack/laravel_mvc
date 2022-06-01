@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Equipo;
 use Illuminate\Http\Request;
 
 class EquipoController extends Controller
 {
     public function index() {
-        return view('equipos.index');
+
+        $equipos = Equipo::paginate();
+        
+        return view('equipos.index', compact('equipos'));
     }
 
     public function create() {
