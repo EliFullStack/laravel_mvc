@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Equipo;
 use App\Models\Partido;
+use App\Models\Entidad;
+use App\Models\Player;
 
 use Illuminate\Database\Seeder;
 
@@ -19,5 +21,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         Equipo::factory(5)->create();
         Partido::factory(5)->create();
+        Entidad::factory(5)->create();
+        Player::factory(10)->create();
     }
 }
