@@ -21,11 +21,11 @@ Route::get('/', HomeController::class);
 
 Route::controller(EquipoController::class)->group(function() {//a partir de Laravel 9
 
-    Route::get('equipos', 'index');
+    Route::get('equipos', 'index')->name('equipos.index');
 
-    Route::get('equipos/create', 'create');
+    Route::get('equipos/create', 'create')->name('equipos.create');
 
-    Route::get('equipos/{team}', 'show');
+    Route::get('equipos/{team}', 'show')->name('equipos.show');
 });
 
 Route::get('partidos', [PartidoController::class, 'index']);
