@@ -25,7 +25,7 @@ Route::controller(EquipoController::class)->group(function() {//a partir de Lara
 
     Route::get('equipos/create', 'create')->name('equipos.create');
 
-    Route::get('equipos/{team}', 'show')->name('equipos.show');
+    Route::get('equipos/{id}', 'show')->name('equipos.show');
 });
 
 Route::get('partidos', [PartidoController::class, 'index']);

@@ -18,7 +18,10 @@ class EquipoController extends Controller
         return view('equipos.create');
     }
 
-    public function show($team) {
-        return view('equipos.show', ['equipo' => $team]);
+    public function show($id) {
+
+        $equipo = Equipo::find($id);
+        //return $equipo;
+        return view('equipos.show', compact('equipo'));
     }
 }
