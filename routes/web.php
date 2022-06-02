@@ -17,7 +17,7 @@ use App\Http\Controllers\EntidadController;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
 
 Route::controller(EquipoController::class)->group(function() {//a partir de Laravel 9
 
@@ -36,8 +36,8 @@ Route::get('partidos/{id}', [PartidoController::class, 'show'])->name('partidos.
 
 
 
-Route::get('entidades', [EntidadController::class, 'index']);
+Route::get('entidades', [EntidadController::class, 'index'])->name('entidades.index');
 
-Route::get('entidades/{entidad}/{equipo?}/{player?}', [EntidadController::class, 'show']);
+Route::get('entidades/{id}', [EntidadController::class, 'show'])->name('entidades.show');
 
 
