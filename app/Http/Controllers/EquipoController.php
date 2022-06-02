@@ -9,13 +9,22 @@ class EquipoController extends Controller
 {
     public function index() {
 
-        $equipos = Equipo::paginate();
+        $equipos = Equipo::orderBy('id', 'desc')->paginate();
         
         return view('equipos.index', compact('equipos'));
     }
 
     public function create() {
         return view('equipos.create');
+    }
+
+    public function store( Request $request) {
+        $equipo = new Equipo();
+        $equipo->nombre = $request->name;
+        $equipo->id_entidad = $request->id_entidad;
+        //return $equipo;
+        $equipo->save();
+        return redirect()->route('equipos.show', $equipo);
     }
 
     public function show($id) {

@@ -25,6 +25,8 @@ Route::controller(EquipoController::class)->group(function() {//a partir de Lara
 
     Route::get('equipos/create', 'create')->name('equipos.create');
 
+    Route::post('equipos', 'store')->name('equipos.store');
+
     Route::get('equipos/{id}', 'show')->name('equipos.show');
 });
 

@@ -5,6 +5,6 @@
 
 <a href="{{route('equipos.index')}}">Volver a equipos</a>
 
-<p>País de origen: {{$equipo->id_entidad}}</p>
+
 @endsection
 
