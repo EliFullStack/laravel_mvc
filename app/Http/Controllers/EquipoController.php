@@ -27,10 +27,27 @@ class EquipoController extends Controller
         return redirect()->route('equipos.show', $equipo);
     }
 
-    public function show($id) {
+    public function show(Equipo $equipo) {
 
-        $equipo = Equipo::find($id);
+        
         //return $equipo;
         return view('equipos.show', compact('equipo'));
     }
+
+    public function edit(Equipo $equipo) {
+        //otra manera de obtener lo mismo: public function edit($id)
+        //$equipo = Equipo::find($id); 
+        //return $equipo;
+        return view('equipos.edit', compact('equipo'));
+    }
+
+    public function update(Request $request, Equipo $equipo) {
+        //return $request->all();
+        $equipo->nombre = $request->name;
+        $equipo->id_entidad = $request->id_entidad;
+        //return $equipo;
+        $equipo->save();
+        return redirect()->route('equipos.show', $equipo);
+    }
+
 }

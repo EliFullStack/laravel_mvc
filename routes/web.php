@@ -19,16 +19,20 @@ use App\Http\Controllers\EntidadController;
 
 Route::get('/', HomeController::class)->name('home');
 
-Route::controller(EquipoController::class)->group(function() {//a partir de Laravel 9
 
-    Route::get('equipos', 'index')->name('equipos.index');
+Route::get('equipos', [EquipoController::class,'index'])->name('equipos.index');
 
-    Route::get('equipos/create', 'create')->name('equipos.create');
+Route::get('equipos/create', [EquipoController::class,'create'])->name('equipos.create');
 
-    Route::post('equipos', 'store')->name('equipos.store');
+Route::post('equipos', [EquipoController::class,'store'])->name('equipos.store');
 
-    Route::get('equipos/{id}', 'show')->name('equipos.show');
-});
+Route::get('equipos/{equipo}', [EquipoController::class,'show'])->name('equipos.show');
+
+Route::get('equipos/{equipo}/edit', [EquipoController::class,'edit'])->name('equipos.edit');
+
+Route::put('equipos/{equipo}',  [EquipoController::class,'update'])->name('equipos.update');
+
+    
 
 Route::get('partidos', [PartidoController::class, 'index'])->name('partidos.index');
 
@@ -40,7 +44,7 @@ Route::get('partidos/{partido}', [PartidoController::class, 'show'])->name('part
 
 Route::get('partidos/{partido}/edit', [PartidoController::class, 'edit'])->name('partidos.edit');
 
-Route::put('partidos/{$partido}', [PartidoController::class, 'update'])->name('partidos.update');
+Route::put('partidos/{$partido}', [PartidoController::class,'update'])->name('partidos.update');
 
 
 
