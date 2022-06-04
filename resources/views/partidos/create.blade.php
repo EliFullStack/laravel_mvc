@@ -32,7 +32,7 @@
             Estado:
             <select name="estado">
                 <option value="jugado">Jugado</option>
-                <option value="pendiente" selected>Pendiente</option>
+                <option value="pendiente">Pendiente</option>
                 <option value="suspendido">Suspendido</option>
               </select>
         </label>
