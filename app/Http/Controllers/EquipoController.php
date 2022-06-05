@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Equipo;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreEquipo;
+use App\Http\Requests\UpdateEquipo;
 
 class EquipoController extends Controller
 {
@@ -43,12 +44,7 @@ class EquipoController extends Controller
         return view('equipos.edit', compact('equipo'));
     }
 
-    public function update(Request $request, Equipo $equipo) {
-
-        $request->validate([
-            'name' => 'required|max:15',
-            'id_entidad' => 'required'
-        ]);
+    public function update(UpdateEquipo $request, Equipo $equipo) {
 
         //return $request->all();
         $equipo->nombre = $request->name;
