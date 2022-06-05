@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Equipo;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreEquipo;
 
 class EquipoController extends Controller
 {
@@ -18,12 +19,7 @@ class EquipoController extends Controller
         return view('equipos.create');
     }
 
-    public function store( Request $request) {
-
-        $request->validate([
-            'name' => 'required|max:15',
-            'id_entidad' => 'required'
-        ]);
+    public function store(StoreEquipo $request) {
 
         $equipo = new Equipo();
         $equipo->nombre = $request->name;
