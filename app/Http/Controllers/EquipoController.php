@@ -19,6 +19,12 @@ class EquipoController extends Controller
     }
 
     public function store( Request $request) {
+
+        $request->validate([
+            'name' => 'required|max:15',
+            'id_entidad' => 'required'
+        ]);
+
         $equipo = new Equipo();
         $equipo->nombre = $request->name;
         $equipo->id_entidad = $request->id_entidad;
@@ -42,6 +48,12 @@ class EquipoController extends Controller
     }
 
     public function update(Request $request, Equipo $equipo) {
+
+        $request->validate([
+            'name' => 'required|max:15',
+            'id_entidad' => 'required'
+        ]);
+
         //return $request->all();
         $equipo->nombre = $request->name;
         $equipo->id_entidad = $request->id_entidad;

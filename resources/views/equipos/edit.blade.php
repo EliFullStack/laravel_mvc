@@ -11,13 +11,23 @@
     @method('put')
     <label>
         Nombre:
-        <input type="text" name="name" value="{{$equipo->nombre}}">
+        <input type="text" name="name" value="{{old('name', $equipo->nombre)}}">
     </label>
+    @error('name')
+        <br>
+        <small>*{{$message}}</small>
+        <br>
+    @enderror
     <br>
     <label>
         Entidad:
-        <input type="number" name="id_entidad" value="{{$equipo->id_entidad}}">
+        <input type="number" name="id_entidad" value="{{old('id_entidad', $equipo->id_entidad)}}">
     </label>
+    @error('id_entidad')
+        <br>
+        <small>*{{$message}}</small>
+        <br>
+    @enderror
     <br>
     <button type="submit">Actualizar formulario</button>
 

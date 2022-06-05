@@ -10,13 +10,23 @@
     @csrf
     <label>
         Nombre:
-        <input type="text" name="name">
+        <input type="text" name="name" value="{{old('name')}}">
     </label>
+    @error('name')
+        <br>
+        <small>*{{$message}}</small>
+        <br>
+    @enderror
     <br>
     <label>
         Entidad:
-        <input type="number" name="id_entidad">
+        <input type="number" name="id_entidad" value="{{old('id_entidad')}}">
     </label>
+    @error('id_entidad')
+    <br>
+    <small>*{{$message}}</small>
+    <br>
+@enderror
     <br>
     <button type="submit">Enviar formulario</button>
 
