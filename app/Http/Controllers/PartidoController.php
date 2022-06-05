@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Partido;
 use Illuminate\Http\Request;
+use App\Http\Requests\StorePartido;
 
 class PartidoController extends Controller
 {
@@ -18,17 +19,7 @@ class PartidoController extends Controller
         return view('partidos.create');
     }
 
-    public function store(Request $request) {
-
-        $request->validate([
-            'date' => 'required',//coloco el nombre de los inputs
-            'time' => 'required',
-            'home_points' => 'required',
-            'visiting_points' => 'required',
-            'estado' => 'required',
-            'home_team' => 'required',
-            'visiting_team' => 'required'
-        ]);
+    public function store(StorePartido $request) {
 
        // return $request->all();
        $partido = new Partido();
@@ -79,9 +70,9 @@ class PartidoController extends Controller
         $partido->id_equipo_local = $request->home_team;
         $partido->id_equipo_visitante = $request->visiting_team;
 
-        return $partido;
-        /*
+        //return $partido;
+        
         $partido->save();
-        return redirect()->route('partidos.show', $partido); */
+        return redirect()->route('partidos.show', $partido); 
     }
 }
