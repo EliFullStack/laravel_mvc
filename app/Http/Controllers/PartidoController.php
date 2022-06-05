@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Partido;
 use Illuminate\Http\Request;
 use App\Http\Requests\StorePartido;
+use App\Http\Requests\UpdatePartido;
 
 class PartidoController extends Controller
 {
@@ -48,17 +49,7 @@ class PartidoController extends Controller
 
     }
 
-    public function update(Request $request, Partido $partido) {
-
-        $request->validate([
-            'date' => 'required',//coloco el nombre de los inputs
-            'time' => 'required',
-            'home_points' => 'required',
-            'visiting_points' => 'required',
-            'estado' => 'required',
-            'home_team' => 'required',
-            'visiting_team' => 'required'
-        ]);
+    public function update(UpdatePartido $request, Partido $partido) {
 
         //return $request->all();
         
