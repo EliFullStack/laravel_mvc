@@ -147,7 +147,9 @@ return [
     */
 
     'attributes' => [
-        'name' => 'nombre'
+        'name' => 'nombre',
+        'date' => 'fecha',
+        'time' => 'hora'
     ],
 
 ];

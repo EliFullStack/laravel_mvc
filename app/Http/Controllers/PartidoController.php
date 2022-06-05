@@ -19,6 +19,17 @@ class PartidoController extends Controller
     }
 
     public function store(Request $request) {
+
+        $request->validate([
+            'date' => 'required',//coloco el nombre de los inputs
+            'time' => 'required',
+            'home_points' => 'required',
+            'visiting_points' => 'required',
+            'estado' => 'required',
+            'home_team' => 'required',
+            'visiting_team' => 'required'
+        ]);
+
        // return $request->all();
        $partido = new Partido();
        $partido->fecha = $request->date;
@@ -47,6 +58,17 @@ class PartidoController extends Controller
     }
 
     public function update(Request $request, Partido $partido) {
+
+        $request->validate([
+            'date' => 'required',//coloco el nombre de los inputs
+            'time' => 'required',
+            'home_points' => 'required',
+            'visiting_points' => 'required',
+            'estado' => 'required',
+            'home_team' => 'required',
+            'visiting_team' => 'required'
+        ]);
+
         //return $request->all();
         
         $partido->fecha = $request->date;
