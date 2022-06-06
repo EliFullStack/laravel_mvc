@@ -22,8 +22,8 @@ class PartidoFactory extends Factory
             'puntos_equipo_local' =>$this->faker->numberBetween(0, 100),
             'puntos_equipo_visitante' =>$this->faker->numberBetween(0, 100),
             'estado_partido' =>$this->faker->randomElement(['Jugado','Pendiente','Suspendido']),
-            'id_equipo_visitante'=>$this->faker->numberBetween(1,5),
-            'id_equipo_local'=>$this->faker->numberBetween(1,5)
+            'id_visitante'=>$this->faker->numberBetween(1,5),
+            'id_local'=>$this->faker->numberBetween(1,5)
         ];
     }
 }

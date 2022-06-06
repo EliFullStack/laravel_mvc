@@ -10,4 +10,8 @@ class Entidad extends Model
     use HasFactory;
     
     protected $table = "entidades";
+
+    public function equipos() {
+        return $this->hasMany('App\Models\Equipo');
+    }
 }

@@ -21,7 +21,8 @@ class PlayerFactory extends Factory
             'primer_apellido'=>$this->faker->lastName(),
             'segundo_apellid' =>$this->faker->lastName(),
             'fecha_nacimiento' =>$this->faker->date(),
-            'posicion' =>$this->faker->randomElement(['Base','Escolta','Alero','Ala-Pivot','Pivot'])
+            'posicion' =>$this->faker->randomElement(['Base','Escolta','Alero','Ala-Pivot','Pivot']),
+            'id_equipo' =>$this->faker->numberBetween(1,5)
         ];
     }
 }

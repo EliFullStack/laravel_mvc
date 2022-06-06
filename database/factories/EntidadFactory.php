@@ -17,8 +17,7 @@ class EntidadFactory extends Factory
     public function definition()
     {
         return [
-            'nombre' => $this->faker->sentence(),
-            'pais_origen'=>$this->faker->country()
+            'nombre' => $this->faker->sentence()
         ];
     }
 }
