@@ -1,16 +1,13 @@
 @extends('layouts.plantilla')
-@section('title', 'Entidades show')
+
+@section('title', 'Entidades '. $entidad->nombre)
+
 @section('content')
 
     
-    @if($player)
-        <h1>"Esta es la jugadora {{$player}}, del equipo {{$equipo}}, que pertenece a {{$entidad}}"</h1>
-    @elseif ($equipo)
-        <h1>"Este es el equipo {{$equipo}}, que pertenece a {{$entidad}}"</h1>
-    @else
-        <h1>"ENTIDAD: {{$entidad}}"</h1>
-    @endif
-
+    <h1>"ENTIDAD: {{$entidad->nombre}}"</h1>
+    <a href="{{route('entidades.index')}}">Volver a entidades</a>
+    <p><strong>País de origen: {{$entidad->pais_origen}}</strong></p>
     
 @endsection
 

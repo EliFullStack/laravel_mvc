@@ -9,7 +9,9 @@
 
 <ul>
     @foreach ($equipos as $equipo)
-    <li>{{$equipo->nombre}}</li>
+    <li>
+        <a href="{{route('equipos.show', $equipo->id)}}">{{$equipo->nombre}}</a>
+    </li>
         
     @endforeach
 </ul>
