@@ -22,11 +22,17 @@ class EquipoController extends Controller
 
     public function store(StoreEquipo $request) {
 
-        $equipo = new Equipo();
+       /* $equipo = new Equipo();
         $equipo->nombre = $request->name;
         $equipo->id_entidad = $request->id_entidad;
         //return $equipo;
-        $equipo->save();
+        $equipo->save();*/
+ 
+        $equipo = Equipo::create([
+            "nombre" => $request->name,
+            "id_entidad" => $request->id_entidad
+        ]);
+
         return redirect()->route('equipos.show', $equipo);
     }
 
@@ -47,10 +53,18 @@ class EquipoController extends Controller
     public function update(UpdateEquipo $request, Equipo $equipo) {
 
         //return $request->all();
-        $equipo->nombre = $request->name;
+     /*   $equipo->nombre = $request->name;
         $equipo->id_entidad = $request->id_entidad;
         //return $equipo;
-        $equipo->save();
+        $equipo->save();*/
+
+        $equipo->update([
+            "nombre" => $request->name,
+            "id_entidad" => $request->id_entidad
+        ]);
+
+       // $equipo->update($request->all()); 
+
         return redirect()->route('equipos.show', $equipo);
     }
 
