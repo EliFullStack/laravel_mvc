@@ -44,7 +44,7 @@ Route::get('partidos/{partido}', [PartidoController::class, 'show'])->name('part
 
 Route::get('partidos/{partido}/edit', [PartidoController::class, 'edit'])->name('partidos.edit');
 
-Route::put('partidos/{$partido}', [PartidoController::class,'update'])->name('partidos.update');
+Route::put('partidos/{partido}', [PartidoController::class,'update'])->name('partidos.update');
 
 
 

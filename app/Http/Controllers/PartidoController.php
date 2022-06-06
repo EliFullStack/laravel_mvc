@@ -23,7 +23,7 @@ class PartidoController extends Controller
     public function store(StorePartido $request) {
 
        // return $request->all();
-       $partido = new Partido();
+      /* $partido = new Partido();
        $partido->fecha = $request->date;
        $partido->hora = $request->time;
        $partido->puntos_equipo_local = $request->home_points;
@@ -33,7 +33,18 @@ class PartidoController extends Controller
        $partido->id_equipo_visitante = $request->visiting_team;
 
       // return $partido;
-      $partido->save();
+      $partido->save();*/
+
+      $partido = Partido::create([
+        "fecha" => $request->date,
+        "hora" => $request->time,
+        "puntos_equipo_local" => $request->home_points,
+        "puntos_equipo_visitante" => $request->visiting_points,
+        "estado_partido" => $request->estado,
+        "id_equipo_local" => $request->home_team,
+        "id_equipo_visitante" => $request->visiting_team
+    ]);
+
       return redirect()->route('partidos.show', $partido); 
     }
 
@@ -53,7 +64,7 @@ class PartidoController extends Controller
 
         //return $request->all();
         
-        $partido->fecha = $request->date;
+    /*    $partido->fecha = $request->date;
         $partido->hora = $request->time;
         $partido->puntos_equipo_local = $request->home_points;
         $partido->puntos_equipo_visitante = $request->visiting_points;
@@ -63,7 +74,18 @@ class PartidoController extends Controller
 
         //return $partido;
         
-        $partido->save();
+        $partido->save();*/
+
+        $partido->update([
+        "fecha" => $request->date,
+        "hora" => $request->time,
+        "puntos_equipo_local" => $request->home_points,
+        "puntos_equipo_visitante" => $request->visiting_points,
+        "estado_partido" => $request->estado,
+        "id_equipo_local" => $request->home_team,
+        "id_equipo_visitante" => $request->visiting_team
+        ]);
+
         return redirect()->route('partidos.show', $partido); 
     }
 }

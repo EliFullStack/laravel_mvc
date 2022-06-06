@@ -62,9 +62,9 @@
         <label>
             Estado:
             <select name="estado">
-                <option value="jugado{{old('estado', $partido->estado_partido)}}">Jugado</option>
-                <option value="pendiente{{old('estado', $partido->estado_partido)}}">Pendiente</option>
-                <option value="suspendido{{old('estado', $partido->estado_partido)}}">Suspendido</option>
+                <option value="jugado {{old('estado'== 'jugado' ? 'selected' : '' , $partido->estado_partido)}}">Jugado</option>
+                <option value="pendiente {{old('estado'== 'pendiente' ? 'selected' : '' , $partido->estado_partido)}}">Pendiente</option>
+                <option value="suspendido {{old('estado'== 'suspendido' ? 'selected' : '' , $partido->estado_partido)}}">Suspendido</option>
             </select>
         </label>
         <br>
