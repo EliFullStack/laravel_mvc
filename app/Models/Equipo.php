@@ -11,4 +11,18 @@ class Equipo extends Model
 
    // protected $fillable = ['nombre', 'id_entidad'];
    protected $guarded = [];
+
+
+   //Relación uno a muchos
+   public function players() {
+       return $this->hasMany('App\Models\Player');
+   }
+
+   public function partidos() {
+       return $this->hasMany('App\Models\Partido');
+   }
+
+   public function entidad() {
+       return $this->belongsTo('App\Models\Entidad');
+   }
 }

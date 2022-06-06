@@ -21,6 +21,10 @@ class CreatePlantelesTable extends Migration
             $table->string('segundo_apellid')->nullable();
             $table->date('fecha_nacimiento');
             $table->string('posicion');
+            $table->unsignedBigInteger('id_equipo')->nullable();
+            $table->foreign('id_equipo')->references('id')
+                  ->on('equipos')
+                  ->onDeleted('set null');
         });
     }
 

@@ -20,9 +20,17 @@ class CreatePartidosTable extends Migration
             $table->time('hora');
             $table->integer('puntos_equipo_local')->nullable();
             $table->integer('puntos_equipo_visitante')->nullable();
-            $table->enum('estado_partido', ['jugado', 'pendiente', 'suspendido']);
-            $table->foreignId('id_equipo_local');
-            $table->foreignId('id_equipo_visitante');
+            $table->string('estado_partido');
+
+            $table->unsignedBigInteger('id_local')->nullable();
+            $table->foreign('id_local')->references('id')
+                  ->on('equipos')
+                  ->onDelete('set null');      
+
+            $table->unsignedBigInteger('id_visitante')->nullable();
+            $table->foreign('id_visitante')->references('id')
+                  ->on('equipos')
+                  ->onDelete('set null');
         });
     }
 

@@ -19,7 +19,7 @@ class EquipoFactory extends Factory
     {
         return [
             'nombre' => $this->faker->sentence(),
-            'id_entidad'=>$this->faker->numberBetween(1,5)
+            
         ];
     }
 }

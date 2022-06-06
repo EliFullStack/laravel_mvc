@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEntidadesTable extends Migration
+class CreateEquiposTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateEntidadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('entidades', function (Blueprint $table) {
+        Schema::create('equipos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('nombre');
-            $table->string('pais_origen');
+            $table->unsignedBigInteger('id_entidad')->nullable();
+            $table->foreign('id_entidad')->references('id')
+                  ->on('entidades')
+                  ->onDelete('set null');
         });
     }
 
@@ -28,6 +31,6 @@ class CreateEntidadesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('entidades');
+        Schema::dropIfExists('equipos');
     }
 }

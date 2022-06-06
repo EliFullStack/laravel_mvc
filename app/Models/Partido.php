@@ -10,4 +10,8 @@ class Partido extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function equipos() {
+        return $this->hasMany('App\Models\Equipo');
+    }
 }
