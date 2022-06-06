@@ -6,6 +6,14 @@
 <a href="{{route('equipos.index')}}">Volver a equipos</a>
 <br>
 <a href="{{route('equipos.edit', $equipo)}}">Editar equipo</a>
+<br>
+<form action="{{route('equipos.destroy', $equipo)}}" method="POST">
+
+    @csrf
+    @method('delete')
+
+    <button type="submit">Eliminar</button>
+</form>
 
 
 @endsection
