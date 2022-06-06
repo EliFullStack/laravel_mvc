@@ -48,6 +48,8 @@ Route::get('partidos/{partido}/edit', [PartidoController::class, 'edit'])->name(
 
 Route::put('partidos/{partido}', [PartidoController::class,'update'])->name('partidos.update');
 
+Route::delete('partidos/{partido}', [PartidoController::class,'destroy'])->name('partidos.destroy');
+
 
 
 Route::get('entidades', [EntidadController::class, 'index'])->name('entidades.index');

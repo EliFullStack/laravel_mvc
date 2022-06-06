@@ -12,5 +12,14 @@
     <a href="{{route('partidos.edit', $partido)}}">Editar partido</a>
 
     <p>Hora: {{$partido->hora}}</p>
+    <br>
+    <form action="{{route('partidos.destroy', $partido)}}" method="POST">
+
+        @csrf
+        @method('delete')
+
+        <button type="submit">Eliminar</button>
+
+    </form>
 
 @endsection

@@ -6,6 +6,7 @@ use App\Models\Partido;
 use Illuminate\Http\Request;
 use App\Http\Requests\StorePartido;
 use App\Http\Requests\UpdatePartido;
+use App\Models\Equipo;
 
 class PartidoController extends Controller
 {
@@ -87,5 +88,13 @@ class PartidoController extends Controller
         ]);
 
         return redirect()->route('partidos.show', $partido); 
+    }
+
+    public function destroy(Partido $partido) {
+
+        $partido->delete();
+
+        return redirect()->route('partidos.index');
+
     }
 }
