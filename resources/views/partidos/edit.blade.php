@@ -61,16 +61,19 @@
         <br>
         <label>
             Estado:
-            <select name="estado">
-                <option value="jugado {{old('estado'== 'jugado' ? 'selected' : '' , $partido->estado_partido)}}">Jugado</option>
-                <option value="pendiente {{old('estado'== 'pendiente' ? 'selected' : '' , $partido->estado_partido)}}">Pendiente</option>
-                <option value="suspendido {{old('estado'== 'suspendido' ? 'selected' : '' , $partido->estado_partido)}}">Suspendido</option>
-            </select>
+            <input type="text" name="estado" value="{{old('estado', $partido->estado_partido)}}">
         </label>
+
+        @error('estado')
+        <br>
+        <small>*{{$message}}</small>
+        <br>
+        @enderror
+
         <br>
         <label>
             Equipo Local:
-            <input type="number" name="home_team" value="{{old('home_team', $partido->id_equipo_local)}}">
+            <input type="number" name="home_team" value="{{old('home_team', $partido->id_local)}}">
         </label>
 
         @error('home_team')
@@ -82,7 +85,7 @@
         <br>
         <label>
             Equipo Visitante:
-            <input type="number" name="visiting_team" value="{{old('visiting_team', $partido->id_equipo_visitante)}}">
+            <input type="number" name="visiting_team" value="{{old('visiting_team', $partido->id_visitante)}}">
         </label>
 
         @error('visiting_team')

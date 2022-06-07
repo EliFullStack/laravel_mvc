@@ -32,7 +32,9 @@ class UpdateEquipo extends FormRequest
     public function attributes()
     {
         return [
-            'name' => 'categoría del equipo'
+            'name' => 'categoría del equipo',
+            'home_team' => 'equipo visitante',
+            'visiting_team' => 'equipo local'
         ];
     }
 
