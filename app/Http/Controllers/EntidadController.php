@@ -15,12 +15,14 @@ class EntidadController extends Controller
         return view('entidades.index', compact('entidades'));
     }
 
-    public function show($id) {
+    public function show(Entidad $entidad) {
 
-        $entidad = Entidad::find($id);
+       // $entidad = Entidad::find($id);
         //return $entidad;
        // return view('entidades.show', ['entidad' => $id, 'equipo' => $equipo, 'player' =>$player]);
        //return view('entidades.show', compact('entidad'), compact('equipo'), compact('player'));
        return view('entidades.show', compact('entidad'));
     }
+
+    
 }

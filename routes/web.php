@@ -17,7 +17,7 @@ use App\Http\Controllers\EntidadController;
 |
 */
 
-Route::get('/', HomeController::class)->name('home');
+Route::get('/', [HomeController::class, '__invoke'])->name('home');
 
 
 Route::get('equipos', [EquipoController::class,'index'])->name('equipos.index');
@@ -54,6 +54,6 @@ Route::delete('partidos/{partido}', [PartidoController::class,'destroy'])->name(
 
 Route::get('entidades', [EntidadController::class, 'index'])->name('entidades.index');
 
-Route::get('entidades/{id}', [EntidadController::class, 'show'])->name('entidades.show');
+Route::get('entidades/{entidad}', [EntidadController::class, 'show'])->name('entidades.show');
 
 
