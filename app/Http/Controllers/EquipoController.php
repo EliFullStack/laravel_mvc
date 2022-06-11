@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Equipo;
+use App\Models\Entidad;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreEquipo;
 use App\Http\Requests\UpdateEquipo;
@@ -11,9 +12,18 @@ class EquipoController extends Controller
 {
     public function index() {
 
-        $equipos = Equipo::orderBy('id', 'desc')->paginate();
-        
-        return view('equipos.index', compact('equipos'));
+        $equipos = Equipo::orderBy('id', 'asc')->paginate();
+
+        $entidades = Equipo::join('entidades', 'id_entidad', '=','entidades.id' )
+        ->select ('equipos.id as id_equipos', 'equipos.nombre as equipo', 'entidades.nombre as nombre_entidad')
+        ->orderBy('id_equipos', 'asc')
+        ->get();
+        //return $entidades;
+
+        //$entidades = Entidad::all();
+    
+        return view('equipos.index', compact('equipos', 'entidades'))
+        ->with('entidades', $entidades);
     }
 
     public function create() {

@@ -57,6 +57,13 @@
             margin-left: auto;
             margin-right: auto;  
         }
+        .h1{
+          font-family: 'Montserrat';
+        }
+
+        .h2{
+          font-family: 'Source Code Pro';
+        }
         
     </style>
     <script>
@@ -86,15 +93,18 @@
 
   <div class="container">
     <nav class="bg-violet-700">
-    <div class="grid grid-cols-2 place-content-center h-32 bg-gradient-to-r from-indigo-900 via-pink-600 to-yellow-300">
-        <a class="justify-self-end" href="{{route('home')}}">
-            <h1 class="font-text uppercase text-white text-3xl font-semibold pl-30">
-                Liga de básquetball femenino</h1>
-        </a>
-        <div class="logo bg-contain bg-no-repeat justify-self-start"></div>
+      <div class="h-32 place-content-center bg-gradient-to-r from-indigo-600 via-slate-200 to-pink-500 ">
+    <div class="text-5xl  text-center pt-8 font-extrabold ...">
+      <a class="justify-self-end" href="{{route('home')}}">
+      <span class="h2 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+        Liga de basketball femenino
+      </span>
+    </a>
     </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 bg-violet-900 h-10">
+      </div>
+    </nav> 
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  bg-violet-900 h-10">
         <div class="text-white uppercase hover:bg-violet-700 justify-self-center">
             <a href="{{route('home')}}">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
@@ -103,9 +113,9 @@
             </a>
             
         </div>
-        <a class="font-medium tracking-wide text-xl text-white uppercase bold text-center hover:bg-violet-700 cursor-pointer" href="{{route('entidades.index')}}">Entidades</a>
-        <a class="font-medium tracking-wide text-xl text-white uppercase bold text-center hover:bg-violet-700 cursor-pointer" href="{{route('equipos.index')}}">Equipos</a>
-        <a class="font-medium tracking-wide text-xl text-white uppercase bold text-center hover:bg-violet-700 cursor-pointer" href="{{route('partidos.index')}}">Partidos</a>
+        <a class="h2 pt-1 font-medium tracking-wide text-xl text-white uppercase bold text-center hover:bg-violet-700 cursor-pointer" href="{{route('entidades.index')}}">Entidades</a>
+        <a class="h2 pt-1 font-medium tracking-wide text-xl text-white uppercase bold text-center hover:bg-violet-700 cursor-pointer" href="{{route('equipos.index')}}">Equipos</a>
+        <a class="h2 pt-1 font-medium tracking-wide text-xl text-white uppercase bold text-center hover:bg-violet-700 cursor-pointer" href="{{route('partidos.index')}}">Partidos</a>
     </div>
     </nav>
     
@@ -116,7 +126,7 @@
     @yield('content')
   </main>
   
-  <footer class="bg-indigo-900 text-center lg:text-left md:container md:mx-auto">
+  <footer class="h2 bg-indigo-900 text-center lg:text-left md:container md:mx-auto">
     <div class="text-white text-center p-4">
       © 2022 Copyright: Created by Elita
     </div>

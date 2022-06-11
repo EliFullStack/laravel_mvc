@@ -32,5 +32,6 @@
     <button type="submit">Actualizar formulario</button>
 
 </form>
+<a href="{{route('equipos.index')}}">Volver a equipos</a>
 
 @endsection
