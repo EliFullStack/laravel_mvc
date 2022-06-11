@@ -46,11 +46,7 @@
         <br>
         <label>
             Estado:
-            <select name="estado">
-                <option value="jugado">Jugado</option>
-                <option value="pendiente">Pendiente</option>
-                <option value="suspendido">Suspendido</option>
-              </select>
+            <input type="text" name="estado" value="{{old('estado')}}">
         </label>
 
         @error('estado')

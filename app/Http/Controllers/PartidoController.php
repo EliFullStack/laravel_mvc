@@ -42,8 +42,8 @@ class PartidoController extends Controller
         "puntos_equipo_local" => $request->home_points,
         "puntos_equipo_visitante" => $request->visiting_points,
         "estado_partido" => $request->estado,
-        "id_equipo_local" => $request->home_team,
-        "id_equipo_visitante" => $request->visiting_team
+        "id_local" => $request->home_team,
+        "id_visitante" => $request->visiting_team
     ]);
 
       return redirect()->route('partidos.show', $partido); 
@@ -83,8 +83,8 @@ class PartidoController extends Controller
         "puntos_equipo_local" => $request->home_points,
         "puntos_equipo_visitante" => $request->visiting_points,
         "estado_partido" => $request->estado,
-        "id_equipo_local" => $request->home_team,
-        "id_equipo_visitante" => $request->visiting_team
+        "id_local" => $request->home_team,
+        "id_visitante" => $request->visiting_team
         ]);
 
         return redirect()->route('partidos.show', $partido); 
