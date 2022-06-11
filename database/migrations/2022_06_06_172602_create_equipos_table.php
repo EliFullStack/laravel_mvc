@@ -17,10 +17,10 @@ class CreateEquiposTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nombre');
-            $table->unsignedBigInteger('id_entidad')->nullable();
+            $table->unsignedBigInteger('id_entidad');
             $table->foreign('id_entidad')->references('id')
                   ->on('entidades')
-                  ->onDelete('set null');
+                  ->onDelete('cascade');
         });
     }
 
