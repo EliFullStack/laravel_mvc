@@ -1,6 +1,14 @@
 @extends('layouts.plantilla')
 @section('title', 'Home')
+
 @section('content')
-    <h1>Bienvenidos a la página principal</h1>
+
+
+    
+<div class="container bg-violet-700">
+    <div class="imagen bg-cover bg-center"></div>
+</div>
+
+
 @endsection()
 
