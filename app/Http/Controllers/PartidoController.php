@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StorePartido;
 use App\Http\Requests\UpdatePartido;
 use App\Models\Equipo;
+use App\Models\Entidad;
 
 class PartidoController extends Controller
 {
@@ -14,7 +15,18 @@ class PartidoController extends Controller
 
         $partidos = Partido::orderBy('id', 'desc')->paginate();
 
-        return view('partidos.index', compact('partidos'));
+        $consultas = Partido::join('equipos', 'id_local', '=','equipos.id' )
+        ->select ('partidos.id as id_partidos', 'partidos.fecha','partidos.hora',
+        'partidos.puntos_equipo_local as puntoslocal', 'partidos.puntos_equipo_visitante as puntosvisitante',
+        'partidos.estado_partido as estado', 'partidos.id_local', 'partidos.id_visitante',
+        'equipos.id', 'equipos.nombre')
+        ->orderBy('id_partidos', 'asc')
+        ->get();
+
+        //return $consultas;
+
+        return view('partidos.index', compact('partidos', 'consultas'))
+        ->with('consultas', $consultas);
     }
 
     public function create() {

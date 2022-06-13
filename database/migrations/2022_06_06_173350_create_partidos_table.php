@@ -22,15 +22,15 @@ class CreatePartidosTable extends Migration
             $table->integer('puntos_equipo_visitante')->nullable();
             $table->string('estado_partido');
 
-            $table->unsignedBigInteger('id_local')->nullable();
+            $table->unsignedBigInteger('id_local');
             $table->foreign('id_local')->references('id')
                   ->on('equipos')
-                  ->onDelete('set null');      
+                  ->onDelete('cascade');      
 
-            $table->unsignedBigInteger('id_visitante')->nullable();
+            $table->unsignedBigInteger('id_visitante');
             $table->foreign('id_visitante')->references('id')
                   ->on('equipos')
-                  ->onDelete('set null');
+                  ->onDelete('cascade');
         });
     }
 
