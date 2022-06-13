@@ -59,7 +59,7 @@
                       </tr>
                     </thead class="border-b">
                     <tbody>
-
+                        
                     @foreach ($entidades as $e)
                                                     
                       <tr class="bg-white border-b">
