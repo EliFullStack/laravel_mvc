@@ -64,7 +64,6 @@ class EquipoController extends Controller
     }
 
     public function show(Equipo $equipo) {
-
         
         //return $equipo;
         return view('equipos.show', compact('equipo'));

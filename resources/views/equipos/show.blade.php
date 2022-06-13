@@ -5,7 +5,23 @@
 <div class="container">
 <div class="text-center pt-8 font-extrabold ...">
 <h1 class="h2 text-5xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 m-5">EQUIPO: {{$equipo->nombre}}</h1>
-<h1 class="h2 text-3xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 m-5">ENTIDAD: {{$equipo->id_entidad}}</h1>
+<h1 class="h2 text-3xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 m-5">ENTIDAD:
+
+    
+    @if ($equipo->id_entidad == 1)
+    'A'
+    @elseif ($equipo->id_entidad == 2)
+    'B'
+    @elseif ($equipo->id_entidad == 3)
+    'C'
+    @else
+    'D'
+    @endif
+
+
+    <!--{{$equipo->id_entidad}} -->
+</h1>
+    
 </div>
 
 <a href="{{route('equipos.index')}}">
