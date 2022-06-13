@@ -16,8 +16,6 @@
             </button>
         </a>
     
-    
-
     <!--    <ul>
             @foreach ($equipos as $equipo)
             <li>
@@ -62,19 +60,19 @@
                     </thead class="border-b">
                     <tbody>
 
-                    @foreach ($equipos as $e)
+                    @foreach ($entidades as $e)
                                                     
                       <tr class="bg-white border-b">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{$e->id}}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{$e->id_equipos}}</td>
                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            {{$e->nombre}}
+                            {{$e->equipo}}
                         </td>
                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            {{$e->nombre}}
+                            {{$e->nombre_entidad}}
                         </td>
 
                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            <a href="{{route('equipos.show', $e->id)}}">
+                            <a href="{{route('equipos.show', $e->id_equipos)}}">
                             <button type="button" class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs 
                             leading-tight uppercase rounded-full shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 
                             focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition 
@@ -83,7 +81,7 @@
                         </td>
 
                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            <a href="{{route('equipos.edit', $e->id)}}">
+                            <a href="{{route('equipos.edit', $e->id_equipos)}}">
                             <button type="button" class="inline-block px-6 py-2.5 bg-yellow-500 text-white font-medium text-xs leading-tight 
                             uppercase rounded-full shadow-md hover:bg-yellow-600 hover:shadow-lg focus:bg-yellow-600 focus:shadow-lg 
                             focus:outline-none focus:ring-0 active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out">Modificar</button>  
@@ -103,7 +101,7 @@
                                    
                             </form>    
                         </td>
-                      </tr class="bg-white border-b">
+                      </tr>
                       
 
                     @endforeach
