@@ -111,20 +111,9 @@
                             focus:outline-none focus:ring-0 active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out">Modificar</button>  
                             </a>
                         </td>
+                        <!--
                         
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            <form action="{{route('equipos.destroy', $partido)}}" method="POST">
-
-                                @csrf
-                                @method('delete')
-
-                                
-                                <button type="submit" class="inline-block px-6 py-2.5 bg-red-500 text-white font-medium text-xs leading-tight 
-                                uppercase rounded-full shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg 
-                                focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out">Eliminar</button>
-                                   
-                            </form>    
-                        </td>
+                      -->
                       </tr>
                       
 

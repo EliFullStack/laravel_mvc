@@ -9,6 +9,7 @@
     <h2 class="text-4xl font-semibold text-white pt-5 mb-5 text-center">Entidades</h2>
 
     <div class="flex justify-around">
+        
         <div>
             <a href="#">
                 <div class="a bg-cover mx-auto  border-2 border-white-500/50 rounded"></div>
@@ -33,7 +34,8 @@
             </a>
             <h3 class="h2 text-2xl font-medium text-white pt-5 text-center pb-5">Entidad "D"</h3>            
         </div>
-    </div>               
+    </div>  
+                 
             <!--    <ul>
                     @foreach ($entidades as $entidad)                    
                     <a class="shadow-2xl text-2xl text-semibold italic px-10"
