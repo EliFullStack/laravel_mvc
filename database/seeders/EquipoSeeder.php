@@ -15,27 +15,27 @@ class EquipoSeeder extends Seeder
     public function run()
     {
         $equipo = new Equipo();
-        $equipo->nombre = 'Junior';
+        $equipo->nombre = 'Junior A';
         $equipo->id_entidad = '1';
         $equipo->save();
 
         $equipo = new Equipo();
-        $equipo->nombre = 'Cadete';
+        $equipo->nombre = 'Cadete A';
         $equipo->id_entidad = '1';
         $equipo->save();
 
         $equipo = new Equipo();
-        $equipo->nombre = 'Junior';
+        $equipo->nombre = 'Junior B';
         $equipo->id_entidad = '2';
         $equipo->save();
 
         $equipo = new Equipo();
-        $equipo->nombre = 'Junior';
+        $equipo->nombre = 'Junior C';
         $equipo->id_entidad = '3';
         $equipo->save();
 
         $equipo = new Equipo();
-        $equipo->nombre = 'Cadete';
+        $equipo->nombre = 'Cadete B';
         $equipo->id_entidad = '2';
         $equipo->save();
     }

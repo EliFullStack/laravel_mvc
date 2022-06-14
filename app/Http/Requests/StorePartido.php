@@ -35,8 +35,8 @@ class StorePartido extends FormRequest
     public function attributes()
     {
         return [
-            'home_team' => 'equipo visitante',
-            'visiting_team' => 'equipo local'
+            'home_team' => 'equipo local',
+            'visiting_team' => 'equipo visitante'
         ];
     }
 }

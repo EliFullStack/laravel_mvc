@@ -33,13 +33,15 @@ class StoreEquipo extends FormRequest
     {
         return [
             'name' => 'categoría del equipo',
+            'id_entidad' => 'entidad'
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' => 'El campo categoría del equipo no puede estar vacío.'
+            'name.required' => 'El campo categoría del equipo no puede estar vacío.',
+            'id_entidad.required' => 'Debe seleccionar una entidad.'
         ];
     }
 }

@@ -33,6 +33,7 @@ class UpdateEquipo extends FormRequest
     {
         return [
             'name' => 'categoría del equipo',
+            'id_entidad' => 'entidad',
             'home_team' => 'equipo visitante',
             'visiting_team' => 'equipo local'
         ];
@@ -41,7 +42,8 @@ class UpdateEquipo extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Este campo no puede estar vacío.'
+            'name.required' => 'Este campo no puede estar vacío.',
+            'id_entidad.required' => 'Seleccione una entidad.'
         ];
     }
 }
