@@ -11,6 +11,7 @@ class EntidadController extends Controller
 
         $entidades = Entidad::paginate();
         //return $entidades;
+        
 
         return view('entidades.index', compact('entidades'));
     }
