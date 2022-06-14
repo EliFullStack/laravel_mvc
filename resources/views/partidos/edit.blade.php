@@ -56,7 +56,7 @@
             <input class="w-full px-6 py-2 border-2 border-indigo-600 text-indigo-600 
             font-medium text-xs leading-normal uppercase rounded hover:bg-black hover:bg-opacity-5 
             focus:outline-none focus:ring-0 transition duration-150 ease-in-out mb-5 mt-5"
-             type="number" name="home_points" value="{{old('home_points', $partido->puntos_equipo_local)}}" >
+             type="number" min="0" max="150" name="home_points" value="{{old('home_points', $partido->puntos_equipo_local)}}" >
         </label>
 
         @error('home_points')
@@ -73,7 +73,7 @@
             <input class="w-full px-6 py-2 border-2 border-indigo-600 text-indigo-600 
             font-medium text-xs leading-normal uppercase rounded hover:bg-black hover:bg-opacity-5 
             focus:outline-none focus:ring-0 transition duration-150 ease-in-out mb-5 mt-5"
-             type="number" name="visiting_points" value="{{old('visiting_points', $partido->puntos_equipo_visitante)}}">
+             type="number" min="0" max="150" name="visiting_points" value="{{old('visiting_points', $partido->puntos_equipo_visitante)}}">
         </label>
 
         @error('visiting_points')

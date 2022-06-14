@@ -89,10 +89,10 @@
                             {{$c ->estado}}
                         </td>
                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            {{$c ->nombre}}
+                            {{$c ->nombre_local}}
                         </td>
                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            {{$c ->nombre}}
+                            {{$c ->nombre_visitante}}
                         </td>
 
                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">

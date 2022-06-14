@@ -16,14 +16,16 @@ class PartidoController extends Controller
         $partidos = Partido::orderBy('id', 'desc')->paginate();
 
         $consultas = Partido::join('equipos', 'id_local', '=','equipos.id' )
+        ->join('equipos as equipo_visitante', 'id_visitante', '=', 'equipo_visitante.id')
         ->select ('partidos.id as id_partidos', 'partidos.fecha','partidos.hora',
         'partidos.puntos_equipo_local as puntoslocal', 'partidos.puntos_equipo_visitante as puntosvisitante',
         'partidos.estado_partido as estado', 'partidos.id_local', 'partidos.id_visitante',
-        'equipos.id', 'equipos.nombre')
+        'equipos.id', 'equipos.nombre as nombre_local', 'equipo_visitante.nombre as nombre_visitante')
         ->orderBy('id_partidos', 'asc')
         ->get();
-
-        //return $consultas;
+        //var_dump($consultas);
+        //exit();
+       // return $consultas;
 
         return view('partidos.index', compact('partidos', 'consultas'))
         ->with('consultas', $consultas);
@@ -64,15 +66,15 @@ class PartidoController extends Controller
     public function show(Partido $partido) {
 
        // $partido = Partido::find($id);
-
-       $consultas = Partido::join('equipos', 'id_local', '=','equipos.id' )
+        
+       $consultas = Partido::join('equipos', 'id_local', '=','equipos.id')
         ->select ('partidos.id as id_partidos', 'partidos.fecha','partidos.hora',
         'partidos.puntos_equipo_local as puntoslocal', 'partidos.puntos_equipo_visitante as puntosvisitante',
         'partidos.estado_partido as estado', 'partidos.id_local', 'partidos.id_visitante',
         'equipos.id', 'equipos.nombre as equipo_nombre')
         ->orderBy('id_partidos', 'asc')
         ->get();
-
+       
         //return $consultas;
 
         return view('partidos.show', compact('partido', 'consultas'))
